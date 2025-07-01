@@ -39,21 +39,17 @@ git clone TODONOMEREPO
 docker-compose up -d --build
 ```
 
-3. **Instale as dependências PHP e rode as migrations**
+3. **Executar setup**
 
 ```bash
-docker exec -it laravel-app bash
-composer install
-php artisan migrate
-exit
+./setup.sh
 
 ```
 
-4. **Instale as dependências do frontend (Vue + Vite)**
+4. **Rodar frontend (Vue + Vite)**
 
 ```bash
 docker exec -it laravel-vite sh
-npm install
 npm run dev
 exit
 
@@ -64,7 +60,7 @@ exit
 ## 🌐 Acessar a aplicação
 
 - Laravel: http://localhost:8000
-- Vite: http://localhost:5174
+- Vite: http://localhost:5173
 
 ---
 
@@ -74,7 +70,7 @@ exit
 | ---- | ---- | ----  | 
 | nginx  | 8000  | Servidor Web  |
 | mysql  | 3306  | Banco de dados  |
-| vite | 5174  | Dev Server Vue.js  |
+| vite | 5173  | Dev Server Vue.js  |
 
 ---
 
@@ -99,9 +95,14 @@ DB_PASSWORD=laravel
 docker-compose up -d        # Sobe os containers
 docker-compose down         # Para os containers
 docker exec -it laravel-app bash  # Acessa o container da aplicação
+```
+
+> Rodar os comandos abaixo dentro do container `docker exec -it laravel-app bash`
+
+```bash
 php artisan migrate         # Roda as migrations
 npm run dev                 # Roda o frontend com Vite
-
+php artisan app:consultar-licitacao-scraper # testa scraper ConsultaLicitacoes
 ```
 
 --- 
