@@ -2,7 +2,9 @@
   "projectName": "licitacao",
   "projectOwner": "karenyov",
   "repoType": "github",
-  "files": ["README.md"],
+  "files": [
+    "README.md"
+  ],
   "imageSize": 100,
   "contributorsPerLine": 7,
   "contributorsSortAlphabetically": false,
@@ -16,6 +18,17 @@
     }
   },
   "skipCi": true,
-  "contributors": [],
-  "repoHost": "https://github.com"
+  "contributors": [
+    {
+      "login": "karenyov",
+      "name": "Karen Vicente",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11029857?v=4",
+      "profile": "https://github.com/karenyov",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "repoHost": "https://github.com",
+  "commitConvention": "angular"
 }

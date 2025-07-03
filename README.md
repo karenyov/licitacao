@@ -112,6 +112,17 @@ php artisan app:consultar-licitacao-scraper # testa scraper ConsultaLicitacoes
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/karenyov"><img src="https://avatars.githubusercontent.com/u/11029857?v=4" width="100px;" alt=""/><br /><sub><b>Karen Vicente</b></sub></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 Este projeto segue a especificação [all-contributors](https://allcontributors.org/), contribuições de todos os tipos são bem-vindas!
