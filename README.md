@@ -110,6 +110,8 @@ php artisan app:consultar-licitacao-scraper # testa scraper ConsultaLicitacoes
 ## ✨ Contribuidores
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 Este projeto segue a especificação [all-contributors](https://allcontributors.org/), contribuições de todos os tipos são bem-vindas!
