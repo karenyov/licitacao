@@ -39,7 +39,7 @@ class ConsultarLicitacaoScraper extends Command
 
         $todasLicitacoes = [];
 
-        $totalPaginas = 2; //REMOVER ISSO AQUI DEIXEI APENAS PARA TESTE
+        $totalPaginas = 2; //REMOVER ISSO AQUI
 
         for ($pagina = 1; $pagina <= $totalPaginas; $pagina++) {
             $this->info("Capturando página $pagina / $totalPaginas");
