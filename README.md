@@ -115,7 +115,7 @@ php artisan app:consultar-licitacao-scraper # testa scraper ConsultaLicitacoes
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/karenyov"><img src="https://avatars.githubusercontent.com/u/11029857?v=4" width="100px;" alt=""/><br /><sub><b>Karen Vicente</b></sub></a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/karenyov"><img src="https://avatars.githubusercontent.com/u/11029857?v=4?s=100" width="100px;" alt="Karen Vicente"/><br /><sub><b>Karen Vicente</b></sub></a><br /><a href="https://github.com/karenyov/licitacao/commits?author=karenyov" title="Code">💻</a> <a href="#infra-karenyov" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     </tr>
   </tbody>
 </table>
