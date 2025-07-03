@@ -32,10 +32,29 @@ class LicitacaoScraperService
                 $html = $td->html();
 
                 $linhas = $this->getTextFromHtml($html);
-                $licitacoes[] = $this->extrairDados($linhas);
+
+                $linkNode = $td->filter("a[name='hist_eventos']");
+                $link = null;
+
+                if ($linkNode->count() > 0) {
+                    $link = $this->parseLink($linkNode->attr('onclick'));
+                }
+
+                $dados = $this->extrairDados($linhas);
+                $dados['link_hist_eventos'] = $link;
+
+                $licitacoes[] = $dados;
             });
         });
         return $licitacoes;
+    }
+
+    private function parseLink (string $link): ?string
+    {
+        if (preg_match('/\'(.*?)\'/', $link, $matches)) {
+            return $matches[1];
+        }
+        return null;
     }
 
     private function getTextFromHtml(string $html): array

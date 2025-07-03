@@ -107,6 +107,16 @@ php artisan app:consultar-licitacao-scraper # testa scraper ConsultaLicitacoes
 
 --- 
 
+## ✨ Contribuidores
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+Este projeto segue a especificação [all-contributors](https://allcontributors.org/), contribuições de todos os tipos são bem-vindas!
+
+
+--- 
+
 📄 Licença
 
 Este projeto está licenciado sob os termos da [MIT license](https://opensource.org/licenses/MIT).
