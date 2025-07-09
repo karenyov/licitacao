@@ -9,10 +9,10 @@ use Symfony\Component\HttpClient\HttpClient;
 
 class ConsultarLicitacaoScraper extends Command
 {
-
     protected $signature = 'app:consultar-licitacao-scraper';
-    protected $description = 'Scraper de licitações - Testar ConsultaLicitacoes';
-    protected $scraper;
+    protected $description = 'Scraper de licitações - Testar ConsultarLicitacaoScraper';
+    protected LicitacaoScraperService $scraper;
+    public const baseURL = 'http://comprasnet.gov.br/ConsultaLicitacoes/ConsLicitacaoDia.asp';
 
     public function __construct()
     {
@@ -22,11 +22,9 @@ class ConsultarLicitacaoScraper extends Command
         $this->scraper = new LicitacaoScraperService($client);
     }
 
-    const baseURL = 'http://comprasnet.gov.br/ConsultaLicitacoes/ConsLicitacaoDia.asp';
-
     public function handle()
     {
-        $this->info("Iniciando scraping de consulta licitações...");
+        $this->info('Iniciando scraping de consulta licitações...');
         $html = $this->scraper->getHtml(self::baseURL);
 
         $totalRegistros = $this->extrairTotalRegistros($html);
@@ -53,7 +51,7 @@ class ConsultarLicitacaoScraper extends Command
             $todasLicitacoes = array_merge($todasLicitacoes, $licitacoes);
         }
 
-        $this->info("Scraping consulta licitações finalizado. Total capturado: " . count($todasLicitacoes));
+        $this->info('Scraping consulta licitações finalizado. Total capturado: ' . count($todasLicitacoes));
     }
 
     private function extrairTotalRegistros(string $html): int
