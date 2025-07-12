@@ -14,3 +14,8 @@ docker exec -it laravel-vite sh -c "npm install"
 
 echo "✅ Frontend pronto!"
 echo "ℹ️ Agora rode 'npm run dev' dentro do container laravel-vite se quiser iniciar o Vite."
+
+echo "▶ Configurando Git Hooks personalizados..."
+git config core.hooksPath git/hooks
+chmod +x .git-hooks/*
+echo "✅ Git Hooks prontos!"
