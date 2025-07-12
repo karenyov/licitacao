@@ -107,8 +107,6 @@ php artisan app:consultar-licitacao-item-scraper # testa scraper ConsultaLicitac
 ./vendor/bin/php-cs-fixer fix #fixer arquivos
 ```
 
-
-
 --- 
 
 ## ✨ Contribuidores
