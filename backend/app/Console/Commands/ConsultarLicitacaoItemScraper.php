@@ -37,10 +37,11 @@ class ConsultarLicitacaoItemScraper extends Command
         // as linhas estarão salvas já no formado da URL coduasg=90200&modprp=5&numprp=900282025
 
 
-        $html = $this->scraper->getHtml(self::baseURL . '?coduasg=90200&modprp=5&numprp=900282025');
+        $html = $this->scraper->getHtml(self::baseURL . '?coduasg=926119&modprp=5&numprp=901412025');
 
+        $itens = $this->scraper->parseItens($html);
 
-        dd($html);
+        dd($itens);
 
     }
 }

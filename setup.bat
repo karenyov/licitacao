@@ -4,6 +4,9 @@ set -e
 echo "▶ Instalando dependências do backend (Laravel)..."
 docker exec -it laravel-app bash -c "composer install && php artisan migrate"
 
+echo "▶ Ajustando permissões do PHP CS Fixer..."
+docker exec -it laravel-app bash -c "chmod +x ./vendor/bin/php-cs-fixer"
+
 echo "✅ Backend pronto!"
 
 echo "▶ Instalando dependências do frontend (Vue + Vite)..."

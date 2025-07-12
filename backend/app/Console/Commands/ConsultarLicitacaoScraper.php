@@ -51,6 +51,8 @@ class ConsultarLicitacaoScraper extends Command
             $todasLicitacoes = array_merge($todasLicitacoes, $licitacoes);
         }
 
+        var_dump($todasLicitacoes);
+
         $this->info('Scraping consulta licitações finalizado. Total capturado: ' . count($todasLicitacoes));
     }
 

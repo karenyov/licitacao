@@ -2,7 +2,7 @@
 
 namespace App\DTO;
 
-class LicitacaoDTO
+class LicitacaoDTO extends BaseDTO
 {
     protected string $orgao;
     protected string $uasg;

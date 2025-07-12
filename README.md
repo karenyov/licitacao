@@ -103,6 +103,7 @@ docker exec -it laravel-app bash  # Acessa o container da aplicação
 php artisan migrate         # Roda as migrations
 npm run dev                 # Roda o frontend com Vite
 php artisan app:consultar-licitacao-scraper # testa scraper ConsultaLicitacoes
+php artisan app:consultar-licitacao-item-scraper # testa scraper ConsultaLicitacaoItem
 ./vendor/bin/php-cs-fixer fix #fixer arquivos
 ```
 

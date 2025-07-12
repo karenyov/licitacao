@@ -60,20 +60,15 @@ class LicitacaoScraperService extends ScraperBaseService
 
     private function extrairDados(array $linhas): LicitacaoDTO
     {
-        $orgao = [];
-
         $dto = new LicitacaoDTO();
 
-        foreach ($linhas as $linha) {
+        foreach ($linhas as $key => $linha) {
+            if ($key == 0) {
+                $dto->setOrgao($linha);
+            }
             if (str_contains($linha, 'Código da UASG:')) {
-                $orgao[] = $linha;
-                $orgao = implode(' / ', $orgao);
                 $uasg = trim(str_replace('Código da UASG:', '', $linha));
-
-                $dto->setOrgao($orgao);
                 $dto->setUasg($uasg);
-            } elseif (empty($dto->getOrgao())) {
-                $orgao[] = $linha;
             } elseif (str_starts_with($linha, 'Pregão Eletrônico')) {
                 if (preg_match('/Nº\s*([\d\/]+)/', $linha, $matches)) {
                     $pregao = $matches[1];
