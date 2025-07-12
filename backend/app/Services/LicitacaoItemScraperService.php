@@ -22,7 +22,7 @@ class LicitacaoItemScraperService extends ScraperBaseService
             if (trim($span->text()) === 'Itens de Material') {
                 $tabela = $span->nextAll()->filter('table')->first();
 
-                 $tabela->filter('tr')->each(function (Crawler $tr) use (&$itens) {
+                $tabela->filter('tr')->each(function (Crawler $tr) use (&$itens) {
                     $tds = $tr->filter('td');
 
                     if ($tds->count() >= 2 && trim($tds->eq(1)->text()) !== '') {
