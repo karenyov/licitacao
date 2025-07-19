@@ -25,35 +25,40 @@ class ConsultarLicitacaoScraper extends Command
     public function handle()
     {
         $this->info('Iniciando scraping de consulta licitações...');
-        $html = $this->scraper->getHtml(self::baseURL);
+        try {
+            $html = $this->scraper->getHtml(self::baseURL);
+            $totalRegistros = $this->extrairTotalRegistros($html);
+            $totalPaginas = (int) ceil($totalRegistros / 20);
 
-        $totalRegistros = $this->extrairTotalRegistros($html);
-        $totalPaginas = (int) ceil($totalRegistros / 20);
+            $this->info("Total de registros: {$totalRegistros}");
+            $this->info("Total de páginas: {$totalPaginas}");
 
-        $this->info("Total de registros: {$totalRegistros}");
-        $this->info("Total de páginas: {$totalPaginas}");
+            $licitacoes = $this->scraper->parseLicitacoes($html);
 
-        $licitacoes = $this->scraper->parseLicitacoes($html);
+            $todasLicitacoes = [];
 
-        $todasLicitacoes = [];
+            $totalPaginas = 2; //REMOVER ISSO AQUI DEIXEI APENAS PARA TESTE
 
-        $totalPaginas = 2; //REMOVER ISSO AQUI DEIXEI APENAS PARA TESTE
+            for ($pagina = 1; $pagina <= $totalPaginas; $pagina++) {
+                $this->info("Capturando página $pagina / $totalPaginas");
 
-        for ($pagina = 1; $pagina <= $totalPaginas; $pagina++) {
-            $this->info("Capturando página $pagina / $totalPaginas");
+                $urlPagina = self::baseURL . '?pagina=' . $pagina;
 
-            $urlPagina = self::baseURL . '?pagina=' . $pagina;
+                $htmlPagina = $this->scraper->getHtml($urlPagina);
 
-            $htmlPagina = $this->scraper->getHtml($urlPagina);
+                $licitacoes = $this->scraper->parseLicitacoes($htmlPagina);
 
-            $licitacoes = $this->scraper->parseLicitacoes($htmlPagina);
+                $todasLicitacoes = array_merge($todasLicitacoes, $licitacoes);
+            }
 
-            $todasLicitacoes = array_merge($todasLicitacoes, $licitacoes);
+            var_dump($todasLicitacoes);
+
+            $this->info('Scraping consulta licitações finalizado. Total capturado: ' . count($todasLicitacoes));
+
+        } catch (\Throwable $th) {
+            $this->error('Erro ao consultar licitações: ' . $th->getMessage());
+            return;
         }
-
-        var_dump($todasLicitacoes);
-
-        $this->info('Scraping consulta licitações finalizado. Total capturado: ' . count($todasLicitacoes));
     }
 
     private function extrairTotalRegistros(string $html): int
