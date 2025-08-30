@@ -136,4 +136,21 @@ class LicitacaoDTO extends BaseDTO
         $this->linkHistEventos = $linkHistEventos;
         return $this;
     }
+
+    public function toArray(): array
+    {
+        return [
+            'orgao' => $this->orgao,
+            'uasg' => $this->uasg,
+            'lei' => $this->lei,
+            'pregao' => $this->pregao,
+            'objeto' => $this->objeto,
+            'edital' => $this->edital,
+            'endereco' => $this->endereco,
+            'telefone' => $this->telefone,
+            'fax' => $this->fax,
+            'entrega' => $this->entrega,
+            'link_hist_eventos' => $this->linkHistEventos,
+        ];
+    }
 }

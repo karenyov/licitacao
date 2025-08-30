@@ -82,7 +82,7 @@ class LicitacaoScraperService extends ScraperBaseService
                 }
             } elseif (str_starts_with($linha, 'Objeto:')) {
                 $objeto = $this->trim_custom(str_replace('Objeto:', '', $linha));
-                $dados['objeto'] = $objeto;
+                $dto->setObjeto($objeto);
             } elseif (str_starts_with($linha, 'Edital a partir de:')) {
                 $edital = $this->trim_custom(str_replace('Edital a partir de:', '', $linha));
                 $dto->setEdital($edital);

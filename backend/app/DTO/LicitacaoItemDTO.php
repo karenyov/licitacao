@@ -77,4 +77,16 @@ class LicitacaoItemDTO extends BaseDTO
         return $this;
     }
 
+    public function toArray(): array
+    {
+        return [
+            'descricao' => $this->getDescricao(),
+            'tratamento_diferenciado' => $this->getTratamentoDiferenciado(),
+            'tem_aplicabilidade_decreto_7174' => $this->temAplicabilidadeDecreto7174(),
+            'tem_aplicabilidade_margem_preferencial' => $this->temAplicabilidadeMargemPreferencial(),
+            'quantidade' => $this->getQuantidade(),
+            'unidade_fornecimento' => $this->getUnidadeFornecimento(),
+        ];
+    }
+
 }
