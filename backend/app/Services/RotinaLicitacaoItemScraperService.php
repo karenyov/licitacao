@@ -2,18 +2,15 @@
 
 namespace App\Services;
 
-use Symfony\Component\HttpClient\HttpClient;
-
 class RotinaLicitacaoItemScraperService implements Contracts\RotinaInterface
 {
     public const baseURL = 'http://comprasnet.gov.br/ConsultaLicitacoes/download/download_editais_detalhe.asp';
 
-    protected LicitacaoItemScraperService $scraper;
+     protected LicitacaoItemScraperService $scraper;
 
-    public function __construct()
+    public function __construct(LicitacaoItemScraperService $scraper)
     {
-        $client = HttpClient::create();
-        $this->scraper = new LicitacaoItemScraperService($client);
+        $this->scraper = $scraper;
     }
 
     public function executar(): void

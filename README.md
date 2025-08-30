@@ -109,6 +109,15 @@ php artisan app:consultar-licitacao-item-scraper # testa scraper ConsultaLicitac
 
 --- 
 
+## 🚀 Funcionalidades
+
+- ✅ Scraper de licitações do site aberto do governo  
+- ✅ Scraper de itens de licitações do site aberto do governo 
+- ✅ Rotina para salvar os dados do scraper
+- ✅ Mocks para ambiente local 
+
+--- 
+
 ## ✨ Contribuidores
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
