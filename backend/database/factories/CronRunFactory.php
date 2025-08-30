@@ -17,7 +17,7 @@ class CronRunFactory extends Factory
         return [
             'job_name'   => $this->faker->word(),
             'started_at' => $this->faker->dateTimeBetween('-1 day', 'now'),
-            'finished_at'=> $this->faker->dateTimeBetween('now', '+1 day'),
+            'finished_at' => $this->faker->dateTimeBetween('now', '+1 day'),
             'status'     => $this->faker->randomElement(['started', 'finished', 'failed']),
             'message'    => $this->faker->optional()->sentence(),
         ];

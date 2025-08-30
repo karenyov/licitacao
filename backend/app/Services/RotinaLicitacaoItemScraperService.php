@@ -2,12 +2,10 @@
 
 namespace App\Services;
 
-use App\Services\LicitacaoItemScraperService;
 use Symfony\Component\HttpClient\HttpClient;
 
 class RotinaLicitacaoItemScraperService implements Contracts\RotinaInterface
 {
-
     public const baseURL = 'http://comprasnet.gov.br/ConsultaLicitacoes/download/download_editais_detalhe.asp';
 
     protected LicitacaoItemScraperService $scraper;

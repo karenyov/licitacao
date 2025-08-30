@@ -11,7 +11,8 @@ class RotinaLicitacaoScraperService implements Contracts\RotinaInterface
     protected LicitacaoService $licitacaoService;
     public const baseURL = 'http://comprasnet.gov.br/ConsultaLicitacoes/ConsLicitacaoDia.asp';
 
-    public function __construct() {
+    public function __construct()
+    {
 
         $client = HttpClient::create();
         $this->scraper = new LicitacaoScraperService($client);
