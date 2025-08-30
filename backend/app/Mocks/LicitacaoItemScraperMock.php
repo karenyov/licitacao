@@ -1,11 +1,14 @@
 <?php
+
 namespace App\Mocks;
 
 use App\Services\LicitacaoItemScraperService;
 
 class LicitacaoItemScraperMock extends LicitacaoItemScraperService
 {
-    public function __construct() {}
+    public function __construct()
+    {
+    }
 
     public function getHtml(string $url): string
     {
